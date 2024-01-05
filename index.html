@@ -1,0 +1,110 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ayça's Website</title>
+        <link rel="stylesheet" href="styles.css">
+
+    </head>
+    <body>
+        <!-- Navbar Section -->
+       <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/" id="navbar__logo">AYÇA'S WORLD</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="/" class="navbar__links">
+                        Home
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="tech.html" class="navbar__links">
+                        About Me
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/" class="navbar__links">
+                        Books/Movies/Music
+                    </a>
+                </li>
+                <li class="navbar__btn">
+                    <a href="/" class="button">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </div>
+       </nav>
+
+       <!-- Hero Section -->
+       <div class="main">
+        <div class="main__container">
+            <div class="main__content">
+                <h1>WELCOME TO MY PAGE</h1>
+                <h2>I'M AYÇA</h2>
+                <p>I'm proving a point to my boyfriend.</p>
+                <button class="main__btn"><a href="/">Let's Get Started</
+                    a></button>
+            </div>
+            <div class="main__img--container">
+                <img src="imags/pic1.svg" alt="" id="main__img">
+            </div>
+            <div class="launch-time">
+                <div>
+                    <p id="days">00</p>
+                    <span>Days</span>
+                </div>
+                <div>
+                    <p id="hours">00</p>
+                    <span>Hours</span>
+                </div>
+                <div> 
+                    <p id="minutes">00</p>
+                    <span>Minutes</span>
+                </div>
+                <div>
+                    <p id="seconds">00</p>
+                    <span>Seconds</span>
+                </div>
+            </div>
+        </div>
+       </div>
+       <script src="app.js"></script>,
+
+       <script>
+        var countDownDate = new Date("Jan 7, 2024 15:00:00 ").getTime();
+        var x = setInterval(function(){
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);  
+
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+
+            if(distance < 0){
+                clearInterval(x);
+                document.getElementById("days").innerHTML = "00";
+                document.getElementById("hours").innerHTML = "00";
+                document.getElementById("minutes").innerHTML = "00";
+                document.getElementById("seconds").innerHTML = "00";
+
+            }
+
+        },1000);
+
+
+       </script>
+    </body>
+    </html>
